@@ -88,6 +88,20 @@ public class Graph
 
     // ---
 
+    public static void processVertexEarly(int v) {
+        System.out.println("["+v+"] Processed before edges");
+    }
+
+    public static void processVertexLate(int v) {
+        System.out.println("["+v+"] Processed after edges");
+    }
+
+    public static void processEdge(int v, int y, EdgeNode edge) {
+        System.out.println("["+v+"->"+y+"] Processed edge.  weight="+edge.weight);
+    }
+
+    // ---
+
     public int getNumVertices() { return numVertices; }
     public int getNumEdges() { return numEdges; }
     public int getNumEdges(int vertex) { return vertexEdges[vertex]; }
