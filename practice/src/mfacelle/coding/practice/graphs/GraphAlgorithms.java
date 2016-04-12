@@ -63,16 +63,39 @@ public class GraphAlgorithms {
     // ---
 
     /** Performs a depth-first search of the specified graph, from the specified starting point.
-     *
+     *  Passes lots of information to the recursive method.
+     *  Returns the array of parent node information (basically the DFS tree)
      */
-    public static void depthFirstSearch(Graph g, int start) {
-        // initialize isDicovered array - to keep track of visited nodes in DFS
-        depthFirstSearch(g, start, new boolean[g.getNumVertices()]);
+    public static int[] depthFirstSearch(Graph g, int start) {
+        // initialize isDicovered and isProcessed arrays - to keep track of visited nodes in DFS
+        int numVertices = g.getNumVertices();
+        return depthFirstSearch(g, start, new boolean[numVertices], new boolean[numVertices], new int[numVertices]);
     }
 
     /** Recursive DFS method */
-    public static void depthFirstSearch(Graph g, int start, boolean[] isDiscovered) {
+    public static int[] depthFirstSearch(Graph g, int currentVertex, boolean[] isDiscovered, boolean[] isProcessed, int[] parent) {
+        isDiscovered[currentVertex] = true;
+        processVertexEarly(currentVertex);
 
+        EdgeNode edge = g.getEdges(currentVertex);
+        int nextVertex;
+        while (edge != null) {
+            nextVertex = edge.v;
+            // if next vertex has not yet been discovered, record info, process
+            //  and recursively DFS
+            if (!isDiscovered[nextVertex] {
+                parent[nextVertex] = currentVertex;
+                processEdge(currentVertex, nextVertex, edge);
+                depthFirstSearch(g, nextVertex, isDiscovered, isProcessed, parent);
+            }
+            // process the edge if it's not already processed - or if graph is directed
+            else if (!isProcessed[nextVertex] || g.isDirected()) {
+                processEdge(currentVertex, nextVertex, edge);
+            }
+            edge = edge.getNext();
+        }
+        processVertexLate(currentVertex);
+        isProcessed[currentVertex] = true;
     }
 
     // ---
