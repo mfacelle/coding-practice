@@ -57,14 +57,14 @@ public class Graph
 
         // if graph is not directed - insert an edge facing the other direction
         // make sure next edge is directed, or else infinite recursive loop
-        if (!isDirected) {
+        if (!isDirectedEdge) {
             insertEdge(y, x, weight, true);
         }
     }
 
     // ---
 
-    public void toString() {
+    public String toString() {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < numVertices; i++) {
@@ -88,9 +88,9 @@ public class Graph
 
     // ---
 
-    public void getNumVertices() { return numVertices; }
-    public void getNumEdges() { return numEdges; }
-    public void getVertex(int vertex) { return edges[vertex]; }
+    public int getNumVertices() { return numVertices; }
+    public int getNumEdges() { return numEdges; }
+    public int getNumEdges(int vertex) { return vertexEdges[vertex]; }
     public EdgeNode getEdges(int vertex) { return edges[vertex]; }
     public boolean isDirected() { return isDirected; }
 }

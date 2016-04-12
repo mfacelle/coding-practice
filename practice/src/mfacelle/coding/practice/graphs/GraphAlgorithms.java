@@ -69,11 +69,16 @@ public class GraphAlgorithms {
     public static int[] depthFirstSearch(Graph g, int start) {
         // initialize isDicovered and isProcessed arrays - to keep track of visited nodes in DFS
         int numVertices = g.getNumVertices();
-        return depthFirstSearch(g, start, new boolean[numVertices], new boolean[numVertices], new int[numVertices]);
+        // initialize parent array to -1, to represent no parent vertex
+        int[] parent = new int[numVertices];
+        for (int i = 0; i < numVertices; i++) {
+            parent[i] = -1;
+        }
+        return depthFirstSearch(g, start, new boolean[numVertices], new boolean[numVertices], parent);
     }
 
     /** Recursive DFS method */
-    public static int[] depthFirstSearch(Graph g, int currentVertex, boolean[] isDiscovered, boolean[] isProcessed, int[] parent) {
+    private static int[] depthFirstSearch(Graph g, int currentVertex, boolean[] isDiscovered, boolean[] isProcessed, int[] parent) {
         isDiscovered[currentVertex] = true;
         processVertexEarly(currentVertex);
 
@@ -83,7 +88,7 @@ public class GraphAlgorithms {
             nextVertex = edge.v;
             // if next vertex has not yet been discovered, record info, process
             //  and recursively DFS
-            if (!isDiscovered[nextVertex] {
+            if (!isDiscovered[nextVertex]) {
                 parent[nextVertex] = currentVertex;
                 processEdge(currentVertex, nextVertex, edge);
                 depthFirstSearch(g, nextVertex, isDiscovered, isProcessed, parent);
@@ -96,6 +101,8 @@ public class GraphAlgorithms {
         }
         processVertexLate(currentVertex);
         isProcessed[currentVertex] = true;
+
+        return parent;
     }
 
     // ---
@@ -110,6 +117,6 @@ public class GraphAlgorithms {
     }
 
     public static void processEdge(int v, int y, EdgeNode edge) {
-        System.out.println("["+v+"->"+y+"] Processed edge.  weight="+edge.weight));
+        System.out.println("["+v+"->"+y+"] Processed edge.  weight="+edge.weight);
     }
 }
