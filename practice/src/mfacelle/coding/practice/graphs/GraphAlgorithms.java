@@ -11,15 +11,15 @@ import java.util.concurrent.LinkedBlockingDeque;
 public abstract class GraphAlgorithms{
 
     /** the graph to be evaluated */
-    private Graph graph;
+    protected Graph graph;
     /** number of vertices in the graph */
-    private int numVertices;
+    protected int numVertices;
     /** processed state of each vertex - processed if all edges have been processed */
-    private boolean[] isProcessed;
+    protected boolean[] isProcessed;
     /** discovered state of each vertex - discovered if visited at least once */
-    private boolean[] isDiscovered;
+    protected boolean[] isDiscovered;
     /** parent information on each vertex - represents BFS or DFS tree */
-    private int[] parents;
+    protected int[] parents;
 
     // ---
 

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3f865df9-78df-4269-b2f2-9a1f912c8efc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphAlgorithms.java" afterPath="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphAlgorithms.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/TestGraphSearch.groovy" afterPath="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/TestGraphSearch.groovy" />
     </list>
     <ignored path="practice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,14 +59,14 @@
       <file leaf-file-name="GraphAlgorithms.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphAlgorithms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37876105">
-              <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
+            <state vertical-scroll-proportion="-2.4973452">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4466#4467#0" expanded="true" />
-                <element signature="e#4535#4536#0" expanded="true" />
-                <element signature="e#5405#5406#0" expanded="true" />
-                <element signature="e#5439#5440#0" expanded="true" />
+                <element signature="e#4476#4477#0" expanded="true" />
+                <element signature="e#4545#4546#0" expanded="true" />
+                <element signature="e#5415#5416#0" expanded="true" />
+                <element signature="e#5449#5450#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,8 +110,8 @@
         <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/EdgeNode.java" />
         <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/Graph.java" />
         <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphProcess.java" />
-        <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphAlgorithms.java" />
         <option value="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/TestGraphSearch.groovy" />
+        <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphAlgorithms.java" />
       </list>
     </option>
   </component>
@@ -762,12 +761,12 @@
       <option name="number" value="Default" />
       <updated>1460337945319</updated>
       <workItem from="1460384482470" duration="9847000" />
-      <workItem from="1460467351008" duration="6349000" />
+      <workItem from="1460467351008" duration="6526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16196000" />
+    <option name="totallyTimeSpent" value="16373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1683" y="-196" width="1683" height="996" extended-state="0" />
@@ -856,10 +855,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4466#4467#0" expanded="true" />
-            <element signature="e#4535#4536#0" expanded="true" />
-            <element signature="e#5405#5406#0" expanded="true" />
-            <element signature="e#5439#5440#0" expanded="true" />
+            <element signature="e#4476#4477#0" expanded="true" />
+            <element signature="e#4545#4546#0" expanded="true" />
+            <element signature="e#5415#5416#0" expanded="true" />
+            <element signature="e#5449#5450#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -936,14 +935,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphAlgorithms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37876105">
-          <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
+        <state vertical-scroll-proportion="-2.4973452">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4466#4467#0" expanded="true" />
-            <element signature="e#4535#4536#0" expanded="true" />
-            <element signature="e#5405#5406#0" expanded="true" />
-            <element signature="e#5439#5440#0" expanded="true" />
+            <element signature="e#4476#4477#0" expanded="true" />
+            <element signature="e#4545#4546#0" expanded="true" />
+            <element signature="e#5415#5416#0" expanded="true" />
+            <element signature="e#5449#5450#0" expanded="true" />
           </folding>
         </state>
       </provider>
