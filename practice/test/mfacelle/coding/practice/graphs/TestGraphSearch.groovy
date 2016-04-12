@@ -10,6 +10,7 @@ class TestGraphSearch extends Specification {
     private Graph directedGraph
 
     private GraphAlgorithms graphAlgorithms;
+    private GraphAlgorithms directedGraphAlgorithms;
 
 
     // ---
@@ -37,23 +38,25 @@ class TestGraphSearch extends Specification {
         directedGraph.insertEdge(2,4)
         directedGraph.insertEdge(5,1)
 
-        graphAlgorithms = new GraphAlgorithms() {
+        graphAlgorithms = new GraphAlgorithms(graph) {
             @Override
-            void preProcessVertex(int v) {
-                System.out.println("["+v+"] PRE-PROCESS VERTEX");
-            }
+            void preProcessVertex(int v) { System.out.println("["+v+"] PRE-PROCESS VERTEX"); }
 
             @Override
-            void postProcessVertex(int v) {
-                System.out.println("["+v+"] POST-PROCESS VERTEX");
-
-            }
+            void postProcessVertex(int v) { System.out.println("["+v+"] POST-PROCESS VERTEX"); }
 
             @Override
-            void processEdge(int v, int y) {
-                System.out.println("["+v+"->"+y+"] PROCESS EDGE");
+            void processEdge(int v, int y) { System.out.println("["+v+"->"+y+"] PROCESS EDGE"); }
+        }
+        directedGraphAlgorithms = new GraphAlgorithms(directedGraph) {
+            @Override
+            void preProcessVertex(int v) { System.out.println("["+v+"] PRE-PROCESS VERTEX"); }
 
-            }
+            @Override
+            void postProcessVertex(int v) { System.out.println("["+v+"] POST-PROCESS VERTEX"); }
+
+            @Override
+            void processEdge(int v, int y) { System.out.println("["+v+"->"+y+"] PROCESS EDGE"); }
         }
     }
 
@@ -89,9 +92,9 @@ class TestGraphSearch extends Specification {
     def "test BFS"() {
         when: "BFS method is called"
         println("\nBFS of graph\n" + graph)
-        int[] parents = graphAlgorithms.breadthFirstSearch(graph, 0)
+        int[] parents = graphAlgorithms.breadthFirstSearch(0)
         println("\nBFS of directed graph\n" + directedGraph)
-        int[] directedParents = graphAlgorithms.breadthFirstSearch(directedGraph, 0)
+        int[] directedParents = directedGraphAlgorithms.breadthFirstSearch(0)
 
         then: "the parents array (BFS tree representation) should be correct - verified by hand"
         parents[0] == -1
@@ -114,9 +117,9 @@ class TestGraphSearch extends Specification {
     def "test DFS"() {
         when: "DFS method is called"
         println("\nDFS of graph\n" + graph)
-        int[] parents = graphAlgorithms.depthFirstSearch(graph, 0)
+        int[] parents = graphAlgorithms.depthFirstSearch(0)
         println("\nDFS of directed graph\n" + directedGraph)
-        int[] directedParents = graphAlgorithms.depthFirstSearch(directedGraph, 0)
+        int[] directedParents = directedGraphAlgorithms.depthFirstSearch(0)
 
         then: "the parents array (DFS tree representation) should be correct - verified by hand"
         parents[0] == -1
@@ -138,12 +141,12 @@ class TestGraphSearch extends Specification {
     
     def "test find path"() {
         given: "a BFS parents array is created"
-        int[] parents = graphAlgorithms.breadthFirstSearch(graph, 0)
-        int[] directedParents = graphAlgorithms.breadthFirstSearch(directedGraph, 0)
+        int[] parents = graphAlgorithms.breadthFirstSearch(0)
+        int[] directedParents = directedGraphAlgorithms.breadthFirstSearch( 0)
 
         when: "findPath is called for various paths"
-        List<Integer> path_0_5 = graphAlgorithms.findPath(0, 5, parents)
-        List<Integer> directedPath_0_5 = graphAlgorithms.findPath(0, 5, directedParents)
+        List<Integer> path_0_5 = graphAlgorithms.findPath(0, 5)
+        List<Integer> directedPath_0_5 = directedGraphAlgorithms.findPath(0, 5)
 
         then: "the path returned should be equivalent to the one worked out by hand"
         path_0_5.size() == 3
