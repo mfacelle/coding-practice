@@ -8,7 +8,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 /**
  *  Class for writing graph algorithms (search, etc) - based on Skiena book
  */
-public abstract class GraphAlgorithms{
+public abstract class GraphSearchAlgorithms {
 
     /** the graph to be evaluated */
     protected Graph graph;
@@ -23,7 +23,7 @@ public abstract class GraphAlgorithms{
 
     // ---
 
-    public GraphAlgorithms(Graph g) {
+    public GraphSearchAlgorithms(Graph g) {
         graph = g;
         initialize();
     }

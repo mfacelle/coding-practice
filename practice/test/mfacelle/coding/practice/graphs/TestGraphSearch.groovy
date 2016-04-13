@@ -9,8 +9,8 @@ class TestGraphSearch extends Specification {
     private Graph graph
     private Graph directedGraph
 
-    private GraphAlgorithms graphAlgorithms;
-    private GraphAlgorithms directedGraphAlgorithms;
+    private GraphSearchAlgorithms graphAlgorithms;
+    private GraphSearchAlgorithms directedGraphAlgorithms;
 
 
     // ---
@@ -38,7 +38,7 @@ class TestGraphSearch extends Specification {
         directedGraph.insertEdge(2,4)
         directedGraph.insertEdge(5,1)
 
-        graphAlgorithms = new GraphAlgorithms(graph) {
+        graphAlgorithms = new GraphSearchAlgorithms(graph) {
             @Override
             void preProcessVertex(int v) { System.out.println("["+v+"] PRE-PROCESS VERTEX"); }
 
@@ -48,7 +48,7 @@ class TestGraphSearch extends Specification {
             @Override
             void processEdge(int v, int y) { System.out.println("["+v+"->"+y+"] PROCESS EDGE"); }
         }
-        directedGraphAlgorithms = new GraphAlgorithms(directedGraph) {
+        directedGraphAlgorithms = new GraphSearchAlgorithms(directedGraph) {
             @Override
             void preProcessVertex(int v) { System.out.println("["+v+"] PRE-PROCESS VERTEX"); }
 
