@@ -3,7 +3,7 @@ package mfacelle.coding.practice.dynamicprogramming
 import spock.lang.Specification
 
 
-class TestKnapsackProblemSolver extends Specification {
+class KnapsackProblemSolverTest extends Specification {
 
     private KnapsackProblemSolver problemSolver;
 
