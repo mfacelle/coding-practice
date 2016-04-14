@@ -81,7 +81,7 @@ class SortingTest extends Specification {
         when: "merge sort performed"
         IntegerSorting.mergeSort(a)
         long startTime = System.currentTimeMillis()
-        //IntegerSorting.mergeSort(big)
+        IntegerSorting.mergeSort(big)
         long endTime = System.currentTimeMillis()
 
         println("")

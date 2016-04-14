@@ -46,52 +46,56 @@ public class IntegerSorting {
 
     /** performs merge sort, time O(nlogn), space O(n) */
     public static int[] mergeSort(int[] a) {
-        System.out.println("merge sort");
-        mergeSort(a, 0, a.length, a);
+        mergeSort(a, 0, a.length);
         return a;
     }
 
     /** recursive helper for merge sort (recurses down)
      *  performs merge sort on [start,end-1]
      */
-    private static void mergeSort(int[] a, int start, int end, int[] b) {
-        System.out.println("mergsort: " +start+","+end);
-
-        if (end - start < 2) {
-            System.out.println("single value i="+start + " : " + a[start]);
-            return;
+    private static void mergeSort(int[] a, int start, int n) {
+        if (n > 1) {
+            int n1 = n / 2;
+            int n2 = n - n/2;
+            // recursively divide in half
+            mergeSort(a, start, n1);
+            mergeSort(a, start+n1, n2);
+            // merge data
+            merge(a, start, n1, n2);
         }
-
-        int mid = (start + end) / 2;    // find midpoint
-
-        mergeSort(a, start, mid, b);   // recurse on left side
-        mergeSort(a, mid, end, b);     // recurse on right side
-
-        merge(a, start, mid, end, b);  // merge the two halves
-
-        copyArray(b, start, end, a);
     }
 
     /** merges two partitions */
-    private static void merge(int[] a, int start, int mid, int end, int[] b) {
-        System.out.println("MERGE " + start+","+mid+","+end);
-        int i = start;
-        int j = mid;
+    private static void merge(int[] a, int start, int n1, int n2) {
+        // create temp array
+        int[] temp = new int[n1+n2];
+        int i  = 0;
+        int copiedL = 0;
+        int copiedR = 0;
 
-        // While there are elements in the left or right runs...
-        for (int k = start; k < end; k++) {
-            // If left run head exists and is <= existing right run head.
-            if (i < mid && (j >= end || a[i] <= a[j])) {
-                System.out.println("LEFT copy " + a[i] + " to " + k);
-                b[k] = a[i];
-                i = i + 1;
-            } else {
-                System.out.println("RIGHT copy " + a[j] + " to " + k);
-                b[k] = a[j];
-                j = j + 1;
+        // merge by copying from left or right side of middle (n2)
+        while ((copiedL < n1) && (copiedR < n2))
+        {
+            // count comparisons here
+            if (a[start+copiedL] < a[start+n1+copiedR]) {
+                temp[i++] = a[start + (copiedL++)];
             }
-            printArray(b);
+            else {
+                temp[i++] = a[start + n1 + (copiedR++)];
+            }
         }
+
+        // flush out any remaining data
+        while (copiedL < n1) {
+            temp[i++] = a[start + (copiedL++)];
+        }
+        while (copiedR < n2) {
+            temp[i++] = a[start + n1 + (copiedR++)];
+        }
+
+        // copy back to main array
+        for (int i = 0; i < n1+n2; i++)
+            a[start + i] = temp[i];
     }
 
     private static void copyArray(int[] b, int start, int end, int[] a) {
