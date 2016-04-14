@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 
 /** class to test graph creation, BFS and DFS algorithms */
-class TestGraphSearch extends Specification {
+class GraphSearchTest extends Specification {
 
     private Graph graph
     private Graph directedGraph

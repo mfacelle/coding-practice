@@ -3,7 +3,7 @@ package mfacelle.coding.practice.dynamicprogramming
 import spock.lang.Specification
 
 
-class TestEditDistanceSolver extends Specification {
+class EditDistanceSolverTest extends Specification {
 
     EditDistanceSolver solver
 
