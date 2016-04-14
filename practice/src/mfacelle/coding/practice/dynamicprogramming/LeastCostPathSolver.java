@@ -20,7 +20,7 @@ public class LeastCostPathSolver {
 
     public LeastCostPathSolver(Graph g) {
         graph = g;
-        numVertices = g.getNumVertices()
+        numVertices = g.getNumVertices();
     }
 
     // -
@@ -78,6 +78,6 @@ public class LeastCostPathSolver {
                 }
             }
         }
-
+        return distance[end];
     }
 }
