@@ -7,7 +7,7 @@ class SortingTest extends Specification {
 
     private int[] a;
     private int[] big;
-    private int bigArraySize = 1000;
+    private int bigArraySize = 100;
 
     // ---
 
@@ -83,6 +83,31 @@ class SortingTest extends Specification {
         IntegerSorting.mergeSort(a)
         long startTime = System.currentTimeMillis()
         IntegerSorting.mergeSort(big)
+        long endTime = System.currentTimeMillis()
+
+        println("Sorted array: \n\t" + a)
+        println("Sorted random array: \n\t" + big)
+        println("Elapsed time to sort big array: " + (endTime-startTime))
+
+        then: "arrays should be sorted"
+        // a array goes [0,9]
+        for (int i = 0; i < a.length; i++) {
+            a[i] == i
+        }
+        // big array must be in order
+        for (int i = 1; i < big.length; i++) {
+            big[i-1] <= big[i]
+        }
+    }
+
+    // -
+
+    def "test merge sort CS3 version"() {
+        when: "merge sort performed"
+        println("\nMERGE SORT CS3")
+        IntegerSorting.mergeSort_CS3(a)
+        long startTime = System.currentTimeMillis()
+        IntegerSorting.mergeSort_CS3(big)
         long endTime = System.currentTimeMillis()
 
         println("Sorted array: \n\t" + a)
