@@ -7,7 +7,7 @@ class SortingTest extends Specification {
 
     private int[] a;
     private int[] big;
-    private int bigArraySize = 10000;
+    private int bigArraySize = 1000;
 
     // ---
 
@@ -29,12 +29,12 @@ class SortingTest extends Specification {
 
     def "test selection sort"() {
         when: "selection sort performed"
+        println("\nSELECTION SORT")
         IntegerSorting.selectionSort(a)
         long startTime = System.currentTimeMillis()
         IntegerSorting.selectionSort(big)
         long endTime = System.currentTimeMillis()
 
-        println("")
         println("Sorted array: \n\t" + a)
         println("Sorted random array: \n\t" + big)
         println("Elapsed time to sort big array: " + (endTime-startTime))
@@ -54,12 +54,12 @@ class SortingTest extends Specification {
 
     def "test insertion sort"() {
         when: "insertion sort performed"
+        println("\nINSERTION SORT")
         IntegerSorting.insertionSort(a)
         long startTime = System.currentTimeMillis()
         IntegerSorting.insertionSort(big)
         long endTime = System.currentTimeMillis()
 
-        println("")
         println("Sorted array: \n\t" + a)
         println("Sorted random array: \n\t" + big)
         println("Elapsed time to sort big array: " + (endTime-startTime))
@@ -79,12 +79,37 @@ class SortingTest extends Specification {
 
     def "test merge sort"() {
         when: "merge sort performed"
+        println("\nMERGE SORT")
         IntegerSorting.mergeSort(a)
         long startTime = System.currentTimeMillis()
         IntegerSorting.mergeSort(big)
         long endTime = System.currentTimeMillis()
 
-        println("")
+        println("Sorted array: \n\t" + a)
+        println("Sorted random array: \n\t" + big)
+        println("Elapsed time to sort big array: " + (endTime-startTime))
+
+        then: "arrays should be sorted"
+        // a array goes [0,9]
+        for (int i = 0; i < a.length; i++) {
+            a[i] == i
+        }
+        // big array must be in order
+        for (int i = 1; i < big.length; i++) {
+            big[i-1] <= big[i]
+        }
+    }
+
+    // ---
+
+    def "test quick sort"() {
+        when: "quick sort performed"
+        println("\nQUICK SORT")
+        IntegerSorting.quickSort(a)
+        long startTime = System.currentTimeMillis()
+        IntegerSorting.quickSort(big)
+        long endTime = System.currentTimeMillis()
+
         println("Sorted array: \n\t" + a)
         println("Sorted random array: \n\t" + big)
         println("Elapsed time to sort big array: " + (endTime-startTime))
