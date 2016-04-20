@@ -107,4 +107,30 @@ public class Graph
     public int getNumEdges(int vertex) { return vertexEdges[vertex]; }
     public EdgeNode getEdges(int vertex) { return edges[vertex]; }
     public boolean isDirected() { return isDirected; }
+
+    // ---
+
+    /** Creates an array of Edge objects describing this graph.
+     *   Useful in some algorithms (like kruskal minimum spanning tree).
+     *   Note that this adds duplicate edges for undirected graphs.
+     *   Could filter these out, but can't figure out an efficient way to do so
+     */
+    public Edge[] toEdgeArray() {
+        Edge[] edges = new Edge[numEdges];
+        int i = 0;
+        int currentVertex = 0;
+        EdgeNode edge;
+
+        // go until all edges have been added
+        while (i < edges.length && currentVertex < numVertices) {
+            // iterate over all edges on one vertex
+            edge = getEdges(currentVertex);
+            while (edge != null) {
+                edges[i++] = new Edge(currentVertex, edge.v, edge.weight, isDirected);
+                edge = edge.getNext();
+            }
+            currentVertex++;
+        }
+        return edges;
+    }
 }

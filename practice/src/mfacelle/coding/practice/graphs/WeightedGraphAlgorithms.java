@@ -1,5 +1,7 @@
 package mfacelle.coding.practice.graphs;
 
+import mfacelle.coding.practice.sorting.Sorting;
+
 /**
  * Class to implement some weighted graph algorithms - min spanning tree (prim/kruskal), shortest path (dijkstra), etc
  */
@@ -23,7 +25,7 @@ public class WeightedGraphAlgorithms {
 
     // ---
 
-    private void initialize(int start) {
+    private void initialize() {
         // create arrays
         parent = new int[numVertices];
         isVisited = new boolean[numVertices];
@@ -34,7 +36,6 @@ public class WeightedGraphAlgorithms {
             distance[i] = Integer.MAX_VALUE;
             parent[i] = -1;
         }
-        distance[start] = 0;
     }
 
     // ---
@@ -43,7 +44,8 @@ public class WeightedGraphAlgorithms {
      *  Starts from vertex specified
      */
     public int primMinimumSpanningTree(int start) {
-        initialize(start);
+        initialize();
+        distance[start] = 0;
 
         // used in loop
         int currentVertex = start;  // pointer to current vertex
@@ -92,8 +94,41 @@ public class WeightedGraphAlgorithms {
 
     // ---
 
+    /** Performs kruskal's minimum spanning tree algorithm.
+     *   don't like it as much - hard to set parent array and distance array,
+     *   and root of tree gets distance == inf...
+     *
+     *   probably a way around this, but I don't want to bother trying right now - prim is nice and clean
+     *
+     */
     public int kruskalMinimumSpanningTree() {
+        initialize();
+        UnionFind union = new UnionFind(numVertices);
+        // sort the edges by weight (puts in increasing order)
+        Edge[] edges = graph.toEdgeArray();
+        edges = (new Sorting<Edge>()).mergeSort(edges);
 
+        for (int i = 0; i < edges.length; i++) {
+            // if start and end edge don't belong to same set already
+            if (!union.isSameSet(edges[i].start, edges[i].end)) {
+                // then merge the sets
+                union.setUnion(edges[i].start, edges[i].end);
+                spanningTreeDistance += edges[i].weight;
+                System.out.println("adding edge : " + edges[i]);
+                // set parent of this node
+                // if parent for end node doesn't yet exist, set it
+                if (parent[edges[i].end] == -1) {
+                    parent[edges[i].end] = edges[i].start;
+                    distance[edges[i].end] = edges[i].weight;
+                }
+                else {  // set parent of start node - avoid overwriting parents
+                    parent[edges[i].start] = edges[i].end;
+                    distance[edges[i].start] = edges[i].weight;
+                }
+            }
+        }
+
+        return spanningTreeDistance;
     }
 
     // ---

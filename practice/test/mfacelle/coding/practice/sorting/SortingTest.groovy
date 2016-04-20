@@ -1,5 +1,6 @@
 package mfacelle.coding.practice.sorting
 
+import mfacelle.coding.practice.graphs.Edge
 import mfacelle.coding.practice.graphs.EdgeNode
 import spock.lang.Specification
 
@@ -157,18 +158,27 @@ class SortingTest extends Specification {
     def "test generic sorting (mergesort)"() {
         given: "a list of EdgeNodes to be sorted"
         println("\nGENERIC MERGESORT")
-        EdgeNode[] edges = [ new EdgeNode(6,6), new EdgeNode(2,2), new EdgeNode(4,4), new EdgeNode(7,7),
+        EdgeNode[] edgeNodes = [ new EdgeNode(6,6), new EdgeNode(2,2), new EdgeNode(4,4), new EdgeNode(7,7),
                              new EdgeNode(0,0), new EdgeNode(3,3), new EdgeNode(1,1), new EdgeNode(5,5), ]
+        Edge[] edges = [ new Edge(0,6,6), new Edge(0,2,2), new Edge(0,4,4), new Edge(0,7,7),
+                         new Edge(0,0,0), new Edge(0,3,3), new Edge(0,1,1), new Edge(0,5,5), ]
 
-        println("BEFORE SORT : " + edges)
+
+        println("BEFORE SORT (nodes) : " + edgeNodes)
+        println("BEFORE SORT (edges) : " + edges)
 
         when: "generic mergesort called on the unsorted edges"
-        EdgeNode[] sortedEdges = (new Sorting()).mergeSort(edges)
+        EdgeNode[] sortedEdgeNodes = (new Sorting()).mergeSort(edgeNodes)
+        Edge[] sortedEdges = (new Sorting()).mergeSort(edges)
 
-        println("AFTER SORT  : " + sortedEdges)
+
+        println("AFTER SORT (nodes) : " + sortedEdgeNodes)
+        println("AFTER SORT (edges) : " + sortedEdges)
+
 
         then: "edges will be sorted"
-        for (int i = 0; i < sortedEdges.length; i++) {
+        for (int i = 0; i < sortedEdgeNodes.length; i++) {
+            sortedEdgeNodes[i].weight == i
             sortedEdges[i].weight == i
         }
 

@@ -80,7 +80,7 @@ class WeightedGraphAlgorithmsTest extends Specification {
 
         when: "prims algorithm is run on the graph from vertex 0"
         long startTime = System.currentTimeMillis()
-        int spanningTree = algorithms.primMinimumSpanningTree(0)
+        int spanningTree = algorithms.kruskalMinimumSpanningTree()
         long endTime = System.currentTimeMillis()
 
         int[] parent = algorithms.getParent()

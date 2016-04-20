@@ -16,6 +16,8 @@ public class UnionFind {
 
     public UnionFind(int n) {
         numElements = n;
+        parent = new int[n];
+        numChildren = new int[n];
         for (int i = 0; i < n; i++) {
             parent[i] = ROOT;
             numChildren[i] = 0;
@@ -62,10 +64,18 @@ public class UnionFind {
         if (numChildren[xRoot] >= numChildren[yRoot]) {
             numChildren[xRoot] += numChildren[yRoot];   // increase size
             parent[yRoot] = xRoot;                      // point small root to big root
+            return xRoot;
         }
         else {
             numChildren[yRoot] += numChildren[xRoot];   // increase size
             parent[xRoot] = yRoot;                      // point small root to big root
+            return xRoot;
         }
     }
+
+    // ---
+
+    public int[] getParent() { return parent; }
+    public int[] getNumChildren() { return numChildren; }
+    public int getNumElements() { return numElements; }
 }
