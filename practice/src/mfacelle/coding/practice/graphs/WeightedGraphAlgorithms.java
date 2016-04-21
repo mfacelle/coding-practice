@@ -2,6 +2,9 @@ package mfacelle.coding.practice.graphs;
 
 import mfacelle.coding.practice.sorting.Sorting;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Class to implement some weighted graph algorithms - min spanning tree (prim/kruskal), shortest path (dijkstra), etc
  */
@@ -11,16 +14,20 @@ public class WeightedGraphAlgorithms {
     private int numVertices;
 
     // used in algorithms
-    int[] parent;           // array of parent vertex numbers (for spanning tree)
-    boolean[] isVisited;    // if each vertex has been checked or not
-    int[] distance;         // min distance to each vertex from start
-    int spanningTreeDistance;   // sum of all edges in minimum spanning tree
+    private int[] parent;               // array of parent vertex numbers (for spanning tree)
+    private boolean[] isVisited;        // if each vertex has been checked or not
+    private int[] distance;             // min distance to each vertex from start
+    private int spanningTreeDistance;   // sum of all edges in minimum spanning tree
+
+    private int[] dijkstraPath;         // actual path computed by dijkstra
+
 
     // ---
 
     public WeightedGraphAlgorithms(Graph g) {
         graph = g;
         numVertices = g.getNumVertices();
+        dijkstraPath = new int[0];  // only set during leastCostPath() method
     }
 
     // ---
@@ -143,7 +150,91 @@ public class WeightedGraphAlgorithms {
 
     // ---
 
+    /** Performs dijkstra's algorithm to compute the shortest path from start to end.
+     *   Very similar to prim's min spanning tree algorithm (almost identical)
+     */
+    public int leastCostPath(int start, int end) {
+        initialize();
+        distance[start] = 0;
+
+        int currentVertex = start;  // pointer to current vertex
+        EdgeNode edge;              // adjacency list for current vertex
+        int weight;                 // weight of current edge being checked
+        int nextVertex;             // next vertex pointer for current edge being checked
+        int nextMinDistance;        // for checking next smallest distance to vertex
+
+        // while current node has not been visited (if so, it means all nodes have been visited)
+        while (!isVisited[currentVertex]) {
+            // set this vertex to visited status
+            isVisited[currentVertex] = true;
+
+            // iterate over all edges and update minimum distance to it
+            edge = graph.getEdges(currentVertex);
+            while (edge != null) {
+                weight = edge.weight;
+                nextVertex = edge.v;
+                if (distance[currentVertex]+weight < distance[nextVertex]) {
+                    distance[nextVertex] = distance[currentVertex]+weight;
+                    parent[nextVertex] = currentVertex;
+                }
+                edge = edge.getNext();
+            }
+
+            // go to next unvisited vertex with the minimum distance
+            // if all nodes visited, then we are done
+            nextMinDistance = Integer.MAX_VALUE;
+            for (int i = 0; i < numVertices; i++) {
+                // if unvisited and distance to vertex less than current running min
+                if (!isVisited[i] && distance[i] < nextMinDistance) {
+                    nextMinDistance = distance[i];
+                    currentVertex = i;
+                }
+            }
+        }
+
+        dijkstraPath = reconstructPath(start, end);
+        return distance[end];
+    }
+
+    // ---
+
+    /** provided dijkstra's algorithm has been run, this returns the path from start -> end specified in dijkstra.
+     *   if dijkstra's algorithm was not run first, it returns an empty array
+     */
+    private int[] reconstructPath(int start, int end) {
+        List<Integer> path = reconstructPath(start, end, new ArrayList<Integer>());
+        int pathLength = path.size();
+        int[] pathArray = new int[pathLength];
+        // convert list to array (easier to deal with on receiving end)
+        for (int i = 0; i < pathLength; i++) {
+            pathArray[i] = path.get(i);
+        }
+        return pathArray;
+    }
+
+    // -
+
+    /** helper recursive method that adds a node to the list, working from end -> start.
+     *   precondition: start vertex is the same as start vertex used for dijkstra
+     */
+    private List<Integer> reconstructPath(int start, int end, List<Integer> path) {
+        // if start==end (node reached), or parent[end]==-1 (root node), add it to the list
+        // future additions will add in the first slot, pushing this to the last spot
+        if (start == end || parent[end] == -1) {
+            path.add(end);
+            return path;
+        }
+        else {
+            reconstructPath(start, parent[end], path);
+            path.add(end);
+            return path;
+        }
+    }
+
+    // ---
+
     public int[] getDistance() { return distance; }
     public int[] getParent() { return parent; }
     public int getSpanningTreeDistance() { return spanningTreeDistance; }
+    public int[] getLeastCostPath() { return dijkstraPath; }
 }
