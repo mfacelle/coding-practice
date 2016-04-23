@@ -10,9 +10,9 @@ public class Graph
     private static final int DEFAULT_WEIGHT = 1;
 
     private EdgeNode[] edges;       // list of edges for each
-    private int[] vertexEdges;      // number of edges per vertex
+    private int[] degree;      // number of edges per vertex
     private int numVertices;        // total number of vertices (size of arrays)
-    private int numEdges;           // total number of edges (sum of vertexEdges
+    private int numEdges;           // total number of edges (sum of degree
     private boolean isDirected;     // whether or not the graph is directed
 
     // ---
@@ -27,7 +27,7 @@ public class Graph
 
     public Graph(int initVertices, boolean directed) {
         edges = new EdgeNode[initVertices];
-        vertexEdges = new int[initVertices];
+        degree = new int[initVertices];
         numVertices = initVertices;
         numEdges = 0;
         isDirected = directed;
@@ -53,7 +53,7 @@ public class Graph
         newEdge.setNext(edges[x]);
         edges[x] = newEdge;
         numEdges++;
-        vertexEdges[x]++;
+        degree[x]++;
 
         // if graph is not directed - insert an edge facing the other direction
         // make sure next edge is directed, or else infinite recursive loop
@@ -104,7 +104,7 @@ public class Graph
 
     public int getNumVertices() { return numVertices; }
     public int getNumEdges() { return numEdges; }
-    public int getNumEdges(int vertex) { return vertexEdges[vertex]; }
+    public int getNumEdges(int vertex) { return degree[vertex]; }
     public EdgeNode getEdges(int vertex) { return edges[vertex]; }
     public boolean isDirected() { return isDirected; }
 
