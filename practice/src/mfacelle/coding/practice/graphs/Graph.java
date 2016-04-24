@@ -64,6 +64,39 @@ public class Graph
 
     // ---
 
+    /** Removes edges from x->y (and from y->x if graph is undirected) */
+    public void removeEdge(int x, int y) {
+        removeEdge(x, y, isDirected);
+    }
+
+    /** Removes an edge from x->y.  If not directed, also removes the edge y->x.
+     *  Basically just performs a linked list find-and-remove
+     */
+    public void removeEdge(int x, int y, boolean isDirectedEdge) {
+
+        // find this particular edge
+        EdgeNode edge = getEdges(x);
+        EdgeNode nextEdge;
+        while (edge.getNext() != null) {
+            nextEdge = edge.getNext();
+            // if edge found: remove it (point current edge next to the following node)
+            if (nextEdge.v == y) {
+                edge.setNext(nextEdge.getNext());
+            }
+            edge = edge.getNext();
+        }
+
+        // degrease number of edges in graph and degree of vertex
+        numEdges--;
+        degree[x]--;
+
+        if (!isDirectedEdge) {
+            removeEdge(y, x, true);
+        }
+    }
+
+    // ---
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
