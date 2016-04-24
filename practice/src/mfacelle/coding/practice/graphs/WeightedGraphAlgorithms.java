@@ -76,8 +76,6 @@ public class WeightedGraphAlgorithms {
                     distance[nextVertex] = weight;
                     parent[nextVertex] = currentVertex;
                 }
-                else {
-                }
                 edge = edge.getNext();
             }
 
