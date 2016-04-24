@@ -231,7 +231,7 @@ public class Maze {
             }
             sb.append("\n");
             // print all vertical edges
-            for (int x = 0; x < sizeY; x++) {
+            for (int x = 0; x < sizeX; x++) {
                 hasNextEdge = false;
                 vertexNum = pointToVertexNum(x,y);
                 edge = maze.getEdges(vertexNum);
