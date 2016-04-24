@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f865df9-78df-4269-b2f2-9a1f912c8efc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/practice/mfacelle/coding/practice/graphs/mazecreation/MazeCreationTest.class" afterPath="$PROJECT_DIR$/out/test/practice/mfacelle/coding/practice/graphs/mazecreation/MazeCreationTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/mazecreation/Maze.class" afterPath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/mazecreation/Maze.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/mazecreation/Maze.java" afterPath="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/mazecreation/Maze.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/mazecreation/MazeCreationTest.groovy" afterPath="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/mazecreation/MazeCreationTest.groovy" />
     </list>
     <ignored path="practice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +32,8 @@
         <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="122">
-              <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
-              <folding>
-                <element signature="e#2132#2133#0" expanded="true" />
-                <element signature="e#2176#2177#0" expanded="true" />
-              </folding>
+              <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -42,16 +41,10 @@
       <file leaf-file-name="Maze.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/mazecreation/Maze.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="233" column="37" selection-start-line="233" selection-start-column="37" selection-end-line="233" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6710#6711#0" expanded="true" />
-                <element signature="e#6759#6760#0" expanded="true" />
-                <element signature="e#6808#6809#0" expanded="true" />
-                <element signature="e#6842#6843#0" expanded="true" />
-                <element signature="e#7026#7027#0" expanded="true" />
-                <element signature="e#7064#7065#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,8 +53,8 @@
       <file leaf-file-name="MazeCreationTest.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/mazecreation/MazeCreationTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+            <state relative-caret-position="253">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
               <folding>
                 <element signature="e#54#98#0" expanded="true" />
               </folding>
@@ -185,7 +178,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -464,8 +456,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -897,24 +890,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 14h 20m 00s.xml">
-      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 14h 20m 18s.xml">
-      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 14h 20m 29s.xml">
-      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 14h 20m 50s.xml">
-      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 14h 20m 54s.xml">
-      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 14h 21m 10s.xml">
-      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 14h 21m 14s.xml">
       <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
     </history-entry>
@@ -925,6 +900,24 @@
       <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 14h 21m 59s.xml">
+      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 19h 34m 34s.xml">
+      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 19h 35m 25s.xml">
+      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 19h 35m 37s.xml">
+      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 19h 35m 48s.xml">
+      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 19h 36m 08s.xml">
+      <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MazeCreationTest_test_maze_generation - 2016.04.24 at 19h 36m 22s.xml">
       <configuration name="MazeCreationTest.test maze generation" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -943,7 +936,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.67107195" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4698972" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1099,10 +1092,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="107" column="66" selection-start-line="107" selection-start-column="66" selection-end-line="107" selection-end-column="66" />
-          <folding>
-            <element signature="e#2132#2133#0" expanded="true" />
-            <element signature="e#2176#2177#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,10 +1122,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="107" column="66" selection-start-line="107" selection-start-column="66" selection-end-line="107" selection-end-column="66" />
-          <folding>
-            <element signature="e#2132#2133#0" expanded="true" />
-            <element signature="e#2176#2177#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1150,10 +1137,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#2132#2133#0" expanded="true" />
-            <element signature="e#2176#2177#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,10 +1145,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
-          <folding>
-            <element signature="e#2132#2133#0" expanded="true" />
-            <element signature="e#2176#2177#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1272,7 +1253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2912">
           <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1311,17 +1291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
-          <folding>
-            <element signature="e#2132#2133#0" expanded="true" />
-            <element signature="e#2176#2177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/WeightedGraphAlgorithmsTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
@@ -1338,22 +1307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/mazecreation/Maze.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6710#6711#0" expanded="true" />
-            <element signature="e#6759#6760#0" expanded="true" />
-            <element signature="e#6808#6809#0" expanded="true" />
-            <element signature="e#6842#6843#0" expanded="true" />
-            <element signature="e#7026#7027#0" expanded="true" />
-            <element signature="e#7064#7065#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/WeightedGraphAlgorithms.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="962">
@@ -1362,10 +1315,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/mazecreation/Maze.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="233" column="37" selection-start-line="233" selection-start-column="37" selection-end-line="233" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/mazecreation/MazeCreationTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        <state relative-caret-position="253">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding>
             <element signature="e#54#98#0" expanded="true" />
           </folding>

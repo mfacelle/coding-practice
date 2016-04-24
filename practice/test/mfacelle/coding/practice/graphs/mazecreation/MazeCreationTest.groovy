@@ -11,7 +11,7 @@ class MazeCreationTest extends Specification {
     // ---
 
     def setup() {
-        maze = new Maze(10,10)
+        maze = new Maze(20,10)
     }
 
     // ---
