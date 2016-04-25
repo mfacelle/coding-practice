@@ -52,6 +52,11 @@ public class TopologicalSorter extends GraphSearchAlgorithms {
             }
         }
 
+        // if graph marked as not a DAG, or topological sort doesn't contain all vertices, return null
+        if (!isDAG || topologicalSort.size() != numVertices) {
+            return null;
+        }
+
         return topologicalSort;
     }
 
