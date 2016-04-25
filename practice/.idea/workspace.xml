@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f865df9-78df-4269-b2f2-9a1f912c8efc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/TopologicalSorter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/TopologicalSorterTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/Graph.class" afterPath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/Graph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/IndependentSetFinder.class" afterPath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/IndependentSetFinder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/mazecreation/Maze.class" afterPath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/mazecreation/Maze.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/WeightedGraphAlgorithms.class" afterPath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/WeightedGraphAlgorithms.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/TopologicalSorter.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/GraphSearchAlgorithms.class" afterPath="$PROJECT_DIR$/out/production/practice/mfacelle/coding/practice/graphs/GraphSearchAlgorithms.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphSearchAlgorithms.java" afterPath="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphSearchAlgorithms.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/TopologicalSorter.java" afterPath="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/TopologicalSorter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="practice.iws" />
@@ -35,8 +33,11 @@
         <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphSearchAlgorithms.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="91" column="61" selection-start-line="91" selection-start-column="61" selection-end-line="91" selection-end-column="61" />
-              <folding />
+              <caret line="38" column="10" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="10" />
+              <folding>
+                <element signature="e#6103#6104#0" expanded="true" />
+                <element signature="e#6137#6138#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,31 +45,15 @@
       <file leaf-file-name="TopologicalSorter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/TopologicalSorter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.846543">
-              <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.76053965">
+              <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2281#2282#0" expanded="true" />
+                <element signature="e#2317#2318#0" expanded="true" />
+                <element signature="e#2465#2466#0" expanded="true" />
+                <element signature="e#2506#2507#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopologicalSorterTest.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/TopologicalSorterTest.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MazeVertex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/mazecreation/MazeVertex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="83" selection-start-line="9" selection-start-column="83" selection-end-line="9" selection-end-column="83" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -107,7 +92,6 @@
         <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/VertexCoverAlgorithm.java" />
         <option value="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/TestIndependentSetAglorithm.groovy" />
         <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/IndependentSetAlgorithm.groovy" />
-        <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphSearchAlgorithms.java" />
         <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/dynamicprogramming/KnapsackProblemSolver.java" />
         <option value="$PROJECT_DIR$/test/mfacelle/coding/practice/dynamicprogramming/TestKnapsackProblemSolver.groovy" />
         <option value="$PROJECT_DIR$/test/mfacelle/coding/practice/dynamicprogramming/TestEditDistanceSolver.groovy" />
@@ -126,6 +110,10 @@
         <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/mazecreation/Maze.java" />
         <option value="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/mazecreation/MazeCreationTest.groovy" />
         <option value="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/TopologicalSorterTest.groovy" />
+        <option value="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/TwoColorGraphTest.groovy" />
+        <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/TwoColorGraph.java" />
+        <option value="$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/GraphSearchTest.groovy" />
+        <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphSearchAlgorithms.java" />
         <option value="$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/TopologicalSorter.java" />
       </list>
     </option>
@@ -173,8 +161,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -490,6 +476,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -896,6 +884,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
@@ -936,6 +930,7 @@
       <workItem from="1460642901945" duration="911000" />
       <workItem from="1460644371340" duration="10702000" />
       <workItem from="1461597369796" duration="2618000" />
+      <workItem from="1461609388880" duration="3806000" />
     </task>
     <servers />
   </component>
@@ -972,7 +967,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30795000" />
+    <option name="totallyTimeSpent" value="34601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1679" y="-203" width="1636" height="1003" extended-state="0" />
@@ -1036,31 +1031,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/mazecreation/Maze.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="233" column="37" selection-start-line="233" selection-start-column="37" selection-end-line="233" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/mazecreation/MazeCreationTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#54#98#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1274,13 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/GraphSearchTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/dynamicprogramming/KnapsackProblemSolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1328,7 +1295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1363,14 +1329,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/mazecreation/Maze.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1385,9 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding>
-            <element signature="e#54#98#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1399,28 +1354,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/TwoColorGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/GraphSearchTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/GraphSearchAlgorithms.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="61" selection-start-line="91" selection-start-column="61" selection-end-line="91" selection-end-column="61" />
-          <folding />
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="10" />
+          <folding>
+            <element signature="e#6103#6104#0" expanded="true" />
+            <element signature="e#6137#6138#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/mfacelle/coding/practice/graphs/TopologicalSorterTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.28499156">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mfacelle/coding/practice/graphs/TopologicalSorter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.846543">
-          <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.76053965">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2281#2282#0" expanded="true" />
+            <element signature="e#2317#2318#0" expanded="true" />
+            <element signature="e#2465#2466#0" expanded="true" />
+            <element signature="e#2506#2507#0" expanded="true" />
           </folding>
         </state>
       </provider>
