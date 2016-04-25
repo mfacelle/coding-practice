@@ -26,6 +26,8 @@ public abstract class GraphSearchAlgorithms {
     protected int[] exitTime;
     /** variable to keep track of processing times */
     protected int time;
+    /** a finished marker for when something is found (for implementations) */
+    protected boolean isFinished;
 
     // ---
 
@@ -38,6 +40,7 @@ public abstract class GraphSearchAlgorithms {
 
     public void initialize() {
         time = -1;  // start at -1 because ++time is used
+        isFinished = false;
         numVertices = graph.getNumVertices();
         isProcessed = new boolean[numVertices];
         isDiscovered = new boolean[numVertices];
@@ -106,17 +109,21 @@ public abstract class GraphSearchAlgorithms {
      *  Keeps track of processing time (order in which vertices are processed)
      */
     public int[] depthFirstSearch(int currentVertex) {
-        isDiscovered[currentVertex] = true;
-        preProcessVertex(currentVertex);
+        // if some condition has been met, don't continue
+        if (isFinished) {
+            return new int[0];
+        }
 
+        // mark entry time of vertex, and process on entry
+        isDiscovered[currentVertex] = true;
         entryTime[currentVertex] = ++time;
+        preProcessVertex(currentVertex);
 
         EdgeNode edge = graph.getEdges(currentVertex);
         int nextVertex;
         while (edge != null) {
             nextVertex = edge.v;
-            // if next vertex has not yet been discovered, record info, process
-            //  and recursively DFS
+            // if next vertex has not yet been discovered, record info, process, and recursively DFS
             if (!isDiscovered[nextVertex]) {
                 parent[nextVertex] = currentVertex;
                 processEdge(currentVertex, nextVertex);
@@ -126,8 +133,13 @@ public abstract class GraphSearchAlgorithms {
             else if (!isProcessed[nextVertex] || graph.isDirected()) {
                 processEdge(currentVertex, nextVertex);
             }
+            // if some condition was met in processing edge, then exit
+            if (isFinished) {
+                return new int[0];
+            }
             edge = edge.getNext();
         }
+        // end processing of vertex, mark exit time
         postProcessVertex(currentVertex);
         isProcessed[currentVertex] = true;
         exitTime[currentVertex] = ++time;
