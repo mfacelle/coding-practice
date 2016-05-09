@@ -8,10 +8,13 @@ class MazeCreationTest extends Specification {
 
     private Maze maze
 
+    private int sizeX = 20;
+    private int sizeY = 10;
+
     // ---
 
     def setup() {
-        maze = new Maze(20,10)
+        maze = new Maze(sizeX,sizeY)
     }
 
     // ---
@@ -23,6 +26,22 @@ class MazeCreationTest extends Specification {
         then: "just visually inspect it"
         println("GRAPH: \n" + g)
         println("\nMAZE: \n" + maze)
+    }
+
+    // ---
+
+    def "test maze pathfinding"() {
+        given: "a generated maze"
+        Graph g = maze.generateMaze()
+        // print maze for inspection
+        println("\nMAZE: \n" + maze)
+
+        when: "path is found from top-left to bottom-right"
+        Point[] path = maze.findPath(0,0, sizeX-1, sizeY-1)
+
+        then: "path should be valid - visually inspect"
+        println(path)
+        println(MazePathPrinter.mazePathToString(maze, path))
     }
 
     // ---

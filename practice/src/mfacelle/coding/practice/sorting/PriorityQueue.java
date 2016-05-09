@@ -34,7 +34,7 @@ public class PriorityQueue {
         if (size == 0) {
             throw new IllegalStateException("heap is currently empty");
         }
-        int minValue = heap[0];
+        int minValue = heap.get(0);
 
         // overwrite root with last element in heap
         heap.set(0, heap.get(size-1));
@@ -111,9 +111,9 @@ public class PriorityQueue {
 
     /** swaps elements i and j in the heap */
     private void swap(int i, int j) {
-        int temp = heap[i];
-        heap[i] = heap[j];
-        heap[j] = temp;
+        int temp = heap.get(i);
+        heap.set(i, heap.get(j));
+        heap.set(j, temp);
     }
 
     // ---
