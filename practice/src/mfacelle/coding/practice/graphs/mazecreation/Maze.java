@@ -2,7 +2,9 @@ package mfacelle.coding.practice.graphs.mazecreation;
 
 import mfacelle.coding.practice.graphs.EdgeNode;
 import mfacelle.coding.practice.graphs.Graph;
+import mfacelle.coding.practice.graphs.GraphSearchAlgorithms;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -155,8 +157,55 @@ public class Maze {
         return parent;
     }
 
+    // ---
+
+    /** Finds path from start point to end point - using only int arguments */
+    public Point[] findPath(int startX, int startY, int endX, int endY) {
+        return findPath(new Point(startX, startY), new Point(endX, endY));
+    }
+
+    /** Finds the path from start point to end point.
+     *  Returns an array of points where [0]=start, and [length-1]=end.
+     *
+     *  Uses BFS since maze is an unweighted graph
+     *
+     */
+    public Point[] findPath(Point start, Point end) {
+        // create BFS algorithm impl - don't care about processing edges and vertices
+        GraphSearchAlgorithms algorithms = new GraphSearchAlgorithms(maze) {
+            @Override
+            public void preProcessVertex(int v) {   return; }
+            @Override
+            public void postProcessVertex(int v) {  return; }
+            @Override
+            public void processEdge(int v, int y) { return; }
+        };
+
+        int startVertex = pointToVertexNum(start);
+        int endVertex = pointToVertexNum(end);
+
+        // create the bfs tree array representation - starting at vertex number represented by start point
+        algorithms.breadthFirstSearch(startVertex);
+        // recreate the path, using vertex numbers
+        List<Integer> vertexPath = algorithms.findPath(startVertex, endVertex);
+
+        // create the path in terms of points
+        Point[] path = new Point[vertexPath.size()];
+        for (int i = 0; i < path.length; i++) {
+            Integer vertex = vertexPath.get(i);
+            path[i] = vertexNumToPoint(vertex);
+        }
+
+        return path;
+    }
+
     // ===========
     // util functions
+
+    public int getSizeX() { return sizeX; }
+    public int getSizeY() { return sizeY; }
+    public EdgeNode getEdges(int vertex) { return maze.getEdges(vertex); }
+
     //
     // converts a point to array num (and vice versa)
     // points are added along each x, then to next y and along x
@@ -164,7 +213,7 @@ public class Maze {
     //
     // assumes all values passed will be valid (ie, no n > numVertices, or x > sizeX, y > sizeY, etc)
 
-    public int pointToVertexNumber(Point p) {
+    public int pointToVertexNum(Point p) {
         return pointToVertexNum(p.x, p.y);
     }
 
