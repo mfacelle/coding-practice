@@ -35,7 +35,7 @@ public class MazePathPrinter {
             // print vertices and horizontal edges
             for (int x = 0; x < maze.getSizeX(); x++) {
                 if (isInPath(path, x, y)) {
-                    sb.append("X"); // mark the vertex as a path vertex
+                    sb.append("O"); // mark the vertex as a path vertex
                 }
                 else {
                     sb.append("o"); // mark the vertex
