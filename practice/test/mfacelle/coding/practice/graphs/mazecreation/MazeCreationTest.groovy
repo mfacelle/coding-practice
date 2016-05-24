@@ -32,12 +32,19 @@ class MazeCreationTest extends Specification {
 
     def "test maze pathfinding"() {
         given: "a generated maze"
+        long tBeforeMazeGen = System.currentTimeMillis()
         Graph g = maze.generateMaze()
+        long mazeGenTime = System.currentTimeMillis() - tBeforeMazeGen
+
+        println("maze generation ["+sizeX+"x"+sizeY+"] time taken: " + mazeGenTime + "ms")
         // print maze for inspection
         println("\nMAZE: \n" + maze)
 
         when: "path is found from top-left to bottom-right"
+        long tBeforePathFind = System.currentTimeMillis()
         Point[] path = maze.findPath(0,0, sizeX-1, sizeY-1)
+        long pathFindTime = System.currentTimeMillis() - tBeforePathFind
+        println("path finding ["+sizeX+"x"+sizeY+"] time taken: " + pathFindTime + "ms")
 
         then: "path should be valid - visually inspect"
         println(path)
