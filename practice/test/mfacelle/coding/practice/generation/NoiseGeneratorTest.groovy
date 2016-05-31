@@ -20,12 +20,40 @@ class NoiseGeneratorTest extends Specification {
     def "test NoiseGenerator"() {
         when: "noise is generated"
         long startTime = System.currentTimeMillis()
-        double[][] terrain = NoiseGenerator.generateNoise(300,300, 300,300, 0, 1000, 0.5)
+        double[][] terrain = NoiseGenerator.generateNoise(300,300, 300,300, 3, 0.5, 1, 2)
         long timeTaken = System.currentTimeMillis() - startTime
+        ImageWriter.greyWriteImage(terrain)
 
         println("time taken: " + timeTaken)
 
         then: "inspect results by sight"
+        true
+    }
+
+    def "test NoiseGenerator rounded noise"() {
+        when: "noise is generated"
+        long startTime = System.currentTimeMillis()
+        double[][] terrain = NoiseGenerator.generateRoundedNoise(100,100, 100,100, 3, 0.5, 1, 2)
+        long timeTaken = System.currentTimeMillis() - startTime
+        ImageWriter.greyWriteImage(terrain)
+
+
+        println("time taken: " + timeTaken + " ms")
+
+        then: "inspect results by sight"
+        true
+    }
+
+    // ---
+
+    def "test ocean creation"() {
+        when: "noise is generated and oceans made"
+        double[][] terrain = NoiseGenerator.generateRoundedNoise(200,200, 200,200, 10, 0.8, 1, 3)
+        ImageWriter.greyWriteImage(terrain, "beforeOcean.png")
+        terrain = NoiseGenerator.makeOceans(terrain, 0.5, 0.3)
+        ImageWriter.greyWriteImage(terrain, "afterOcean.png")
+
+        then: "inspect"
         true
     }
 }

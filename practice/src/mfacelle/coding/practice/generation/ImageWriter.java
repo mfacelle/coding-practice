@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 public class ImageWriter {
     //just convinence methods for debug
 
-    public static void greyWriteImage(double[][] data) {
+    public static void greyWriteImage(double[][] data, String filename) {
         //this takes and array of doubles between 0 and 1 and generates a grey scale image from them
 
         BufferedImage image = new BufferedImage(data.length, data[0].length, BufferedImage.TYPE_INT_RGB);
@@ -31,7 +31,7 @@ public class ImageWriter {
 
         try {
             // retrieve image
-            File outputfile = new File("saved.png");
+            File outputfile = new File(filename);
             outputfile.createNewFile();
 
             ImageIO.write(image, "png", outputfile);
@@ -39,6 +39,10 @@ public class ImageWriter {
             //o no! Blank catches are bad
             throw new RuntimeException("I didn't handle this very well");
         }
+    }
+
+    public static void greyWriteImage(double[][] data) {
+        greyWriteImage(data, "saved.png");
     }
 
 }
